@@ -11,10 +11,8 @@ fn main() {
     let bytes2 = str2.from_hex().unwrap();
     let mut xor = Vec::new();
 
-    let mut i = 0;
-    for byte in bytes1 {
-        xor.push(byte ^ bytes2[i]);
-        i = i + 1;
+    for (index,byte) in bytes1.iter().enumerate() {
+        xor.push(byte ^ bytes2[index]);
     }
 
     println!("{}", xor.to_hex());
