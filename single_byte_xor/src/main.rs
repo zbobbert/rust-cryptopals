@@ -4,9 +4,15 @@ use serialize::hex::FromHex;
 use std::str;
 
 fn main() {
+    let tuple = decode_string("1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736".to_string());
+    println!("{}: {}", tuple.0, tuple.1);
+}
+
+fn decode_string(hex_string: std::string::String) -> (u8, std::string::String) {
     let max_char = 128;
 
-    let hex = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736".from_hex().unwrap();
+    let hex = hex_string.from_hex().unwrap();
+
     let mut best_decoded_string = std::string::String::new();
     let mut best_xor_char = 0;
 
@@ -22,8 +28,7 @@ fn main() {
             best_xor_char = xor_char;
         }
     }
-
-    println!("{}: {}", best_xor_char, best_decoded_string);
+    return (best_xor_char, best_decoded_string);
 }
 
 fn score_string(s: &str) -> usize {
