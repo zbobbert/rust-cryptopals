@@ -9,12 +9,12 @@ use std::str;
 
 fn main() {
     // Open the path in read-only mode, returns `io::Result<File>`
-        let file = match File::open("4.txt") {
-            // The `description` method of `io::Error` returns a string that
-            // describes the error
-            Err(why) => panic!("couldn't open 4.txt - {}", why),
-            Ok(file) => file,
-        };
+    let file = match File::open("4.txt") {
+        // The `description` method of `io::Error` returns a string that
+        // describes the error
+        Err(why) => panic!("couldn't open 4.txt - {}", why),
+        Ok(file) => file,
+    };
 
     let reader = BufReader::new(file);
 

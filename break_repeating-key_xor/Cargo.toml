@@ -1,0 +1,7 @@
+[package]
+name = "break_repeating-key_xor"
+version = "0.1.0"
+authors = ["Robert Gaulin <robert.gaulin@libertymutual.com>"]
+
+[dependencies]
+rustc-serialize = "*"
