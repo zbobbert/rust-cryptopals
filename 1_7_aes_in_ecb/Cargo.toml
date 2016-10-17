@@ -1,7 +1,6 @@
 [package]
-name = "single_byte_xor"
+name = "aes_in_ecb"
 version = "0.1.0"
 authors = ["Robert Gaulin <robert.gaulin@libertymutual.com>"]
 
 [dependencies]
-rustc-serialize = "*"
